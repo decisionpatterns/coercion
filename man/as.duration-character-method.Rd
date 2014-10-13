@@ -12,6 +12,9 @@
 \description{
 coerce object to a \code{lubridate} duration object
 }
+\note{
+belongs in lubridate.tools package
+}
 \examples{
 as.duration( "7.25 days" )
 }
