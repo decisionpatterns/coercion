@@ -33,10 +33,4 @@ coerce_each.data.frame <- function(x, from, to ) {
 
 coerce_each.data.table <- function(x, from, to) { 
   NextMethod( "coerce_each" )
-  # wh <- sapply( x, function(x) is(x, from ) )
-  #nms <- names(x)[wh]
-  #for( nm in nms )
-  #  x[ , (nm):=as( get(nm), to) ]
-  #
-  #return(x)
 }
