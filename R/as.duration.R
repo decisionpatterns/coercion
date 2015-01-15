@@ -10,6 +10,7 @@
 #' @note 
 #'   belongs in lubridate.tools package
 #'          
+#' @import lubridate          
 #' @export
 
 setMethod( 'as.duration', 'character',     
