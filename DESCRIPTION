@@ -6,7 +6,7 @@ Date: 2015-01-14
 Author: Christopher Brown
 Maintainer: Christopher Brown <chris.brown@decisionpatterns.com>
 Description: Utilities for coercing between types, modes and classes
-License: D/P
+License: Decision Patterns Client License
 Recommends: data.table
 Depends: 
     lubridate
