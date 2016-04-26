@@ -29,6 +29,7 @@
 
 as.logic <- function(x, true=TRUE, false=FALSE) {
   
+  if( is.logical(x) ) return(x)  # makes it idempotent
   tmp <- rep( NA, length(x) ) 
   tmp[ x %in% true ] <- TRUE
   tmp[ x %in% false ] <- FALSE
