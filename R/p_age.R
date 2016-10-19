@@ -1,8 +1,11 @@
 #' parse age
 #' 
-#' parse age formatted as 34Y, 12M, 20D, etc.
+#' parse age formatted as 34Y, 12M, 20D, etc. to an age in years
 #' 
 #' @param x character; age represented as  numeric with a Y, M, D suffic
+#' 
+#' @details 
+#'   Parses a character string to yield an age in years.
 #' 
 #' @return 
 #'   numeric age in years

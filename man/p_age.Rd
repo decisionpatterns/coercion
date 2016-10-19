@@ -13,7 +13,10 @@ p_age(x)
 numeric age in years
 }
 \description{
-parse age formatted as 34Y, 12M, 20D, etc.
+parse age formatted as 34Y, 12M, 20D, etc. to an age in years
+}
+\details{
+Parses a character string to yield an age in years.
 }
 \examples{
   

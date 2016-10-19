@@ -43,9 +43,16 @@ as.logic <- function(x, true=TRUE, false=FALSE) {
 #'   as.logicYN(yn)
 #' @rdname as.logic
 #' @export
+
 as.logicYN <- function(x) 
   as.logic( 
     x
     , true = c("YES","Yes","yes","Y","y")
     , false = c("NO", "No", "no", "N", "n") 
   )
+
+
+#' @rdname as.logic
+#' @export
+
+p_yn <- as.logicYN 

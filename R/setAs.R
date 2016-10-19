@@ -13,4 +13,3 @@ setAs( from='character', to='factor', function(from) factor(from) )
 #' @name as
 #' @family logical
 setAs( from="logical", to="factor", function(from) as.factor(from) )
-

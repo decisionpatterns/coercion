@@ -3,11 +3,14 @@
 \name{as.logic}
 \alias{as.logic}
 \alias{as.logicYN}
+\alias{p_yn}
 \title{Convert character to logical}
 \usage{
 as.logic(x, true = TRUE, false = FALSE)
 
 as.logicYN(x)
+
+p_yn(x)
 }
 \arguments{
 \item{x}{vector  to convert to logical}

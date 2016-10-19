@@ -15,6 +15,7 @@
 #' @export
 
 can <- function( object, class ) {
+  
   show.errors <- getOption("show.error.messages")
   if( show.errors == TRUE )
     options( show.error.messages=FALSE )
@@ -26,5 +27,3 @@ can <- function( object, class ) {
   ! is.na(cancan)
   
 }
-
-
