@@ -9,6 +9,8 @@ Description: Utilities for coercing between types, modes and classes
 License: Decision Patterns Client License
 Recommends: data.table
 Depends: 
-    lubridate
-Suggests: testthat
+    lubridate (>= 1.6.0)
+Suggests: 
+    testthat (>= 1.0.2.9000), 
+    readxl (>= 0.1.1)
 RoxygenNote: 5.0.1.9000
