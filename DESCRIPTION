@@ -11,3 +11,4 @@ Recommends: data.table
 Depends: 
     lubridate
 Suggests: testthat
+RoxygenNote: 5.0.1.9000
