@@ -13,14 +13,21 @@ excel_origin <- structure(-25569, class = "Date") # "1899-12-30"
 #'
 #' @details  
 #' 
-#' At times readxl::read_excel does not get the days right
+#' At times readxl::read_excel does not get the date and times right and imports
+#' them as numeric instead. This converts those numeric date/times to proper
+#' Date or POSIXct objects.
+#'
+#' @return 
+#'   A Date object if \code{x} is integer; a POSIXct object if \code{x} is 
+#'   numeric. \cr
 #'   
 #' @seealso 
-#'    \code{\link[readxl]{read_excel}}
-#' @return 
-#'   as.POSIX_ct
-#' 
+#'   \code{\link[readxl]{read_excel}}
+#'    
+#' @examples
+#'   p_excel_dt( 40000 )
+#'     
 #' @import lubridate
 #' @export 
 
-p_excel_dt <- function(x)  lubridate::excel_origin + ddays(x)
+p_excel_dt <- function(x) excel_origin + lubridate::ddays(x)

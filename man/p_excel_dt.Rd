@@ -10,13 +10,20 @@ p_excel_dt(x)
 \item{x}{numeric; vector of Excel date/times expressed as numeric}
 }
 \value{
-as.POSIX_ct
+A Date object if \code{x} is integer; a POSIXct object if \code{x} is 
+  numeric. \cr
 }
 \description{
 Parse Excel Numeric Date/Time
 }
 \details{
-At times readxl::read_excel does not get the days right
+At times readxl::read_excel does not get the date and times right and imports
+them as numeric instead. This converts those numeric date/times to proper
+Date or POSIXct objects.
+}
+\examples{
+  p_excel_dt( 40000 )
+    
 }
 \seealso{
 \code{\link[readxl]{read_excel}}
