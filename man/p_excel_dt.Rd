@@ -23,7 +23,10 @@ Date or POSIXct objects.
 }
 \examples{
   p_excel_dt( 40000 )
-    
+  p_excel_dt( c(40000,NA)) 
+  p_excel_dt( Sys.Date() )
+  p_excel_dt( Sys.time() )   
+  p_excel_dt( c(Sus)) 
 }
 \seealso{
 \code{\link[readxl]{read_excel}}
