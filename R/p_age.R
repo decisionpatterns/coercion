@@ -13,12 +13,17 @@
 #' @examples 
 #'   
 #'   c('34Y', '11M', '12D') %>% p_age           
-#' 
+#'   1:10 %>% p_age
+#'   
+#' @import magrittr
+#' @import stringr
 #' @export
  
 p_age <- function(x) {
 
-  x %<>% str_trim("both")
+  if( is.numeric(x) ) return(x)
+  
+  x %<>% str_trim('both')
 
  ### age
    age <- numeric(length(x))
@@ -32,5 +37,9 @@ p_age <- function(x) {
    age[ x %>% str_detect("D$") ] <-
      x[ x %>% str_detect("D$") ] %>% str_replace("D$","") %>% as.numeric %>% divide_by(365)
 
+   # DEFAULT:
+   age[ x %>% str_detect("[^YMD]$") ] <- 
+     x[ x %>% str_detect("[^YMD]$") ] %>% as.numeric()
+   
    return(age)
 }

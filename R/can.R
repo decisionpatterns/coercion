@@ -27,3 +27,5 @@ can <- function( object, class ) {
   ! is.na(cancan)
   
 }
+
+can_be <- can
