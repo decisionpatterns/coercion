@@ -12,8 +12,8 @@
 #'   
 #' @examples 
 #'   
-#'   c('34Y', '11M', '12D') %>% p_age           
-#'   1:10 %>% p_age
+#'   c('34Y', '11 M', '12d', '25 w' ) %>% p_age           
+#'   1:5 %>% p_age
 #'   
 #' @import magrittr
 #' @import stringr
@@ -22,24 +22,30 @@
 p_age <- function(x) {
 
   if( is.numeric(x) ) return(x)
-  
   x %<>% str_trim('both')
+  
+  age <- numeric(length(x))
 
- ### age
-   age <- numeric(length(x))
+  # YEARS
+  age[ x %>% str_detect("[Yy]$") ] = 
+    x[ x %>% str_detect("[Yy]$") ] %>% str_replace("\\s*[Yy]$",'') %>%
+    as.numeric   
+  
+  # MONTHS
+  age[ x %>% str_detect("[Mm]$") ] =
+    x[ x %>% str_detect("[Mm]$") ] %>% str_replace("\\s*[Mm]$",'') %>%
+    as.numeric %>% divide_by(12)
 
-   age[ x %>% str_detect("Y$") ] <-
-     x[ x %>% str_detect("Y$") ] %>% str_replace("Y$","") %>% as.numeric
+  # DAYS
+  age[ x %>% str_detect("[Dd]$") ] =
+    x[ x %>% str_detect("[Dd]$") ] %>% str_replace("\\s*[Dd]$",'') %>%
+    as.numeric %>% divide_by(365.25)
 
-   age[ x %>% str_detect("M$") ] <-
-     x[ x %>% str_detect("M$") ] %>% str_replace("M$","") %>% as.numeric %>% divide_by(12)
+  # WEEKS
+  age[ x %>% str_detect("[Ww]$") ] =
+    x[ x %>% str_detect("[Ww]$") ] %>% str_replace("\\s*[Ww]$",'') %>%
+    as.numeric %>% multiply_by(7) %>% divide_by(365.25)
 
-   age[ x %>% str_detect("D$") ] <-
-     x[ x %>% str_detect("D$") ] %>% str_replace("D$","") %>% as.numeric %>% divide_by(365)
+  return(age)
 
-   # DEFAULT:
-   age[ x %>% str_detect("[^YMD]$") ] <- 
-     x[ x %>% str_detect("[^YMD]$") ] %>% as.numeric()
-   
-   return(age)
 }

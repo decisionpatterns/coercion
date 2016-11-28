@@ -30,6 +30,7 @@ excel_origin <- structure(-25569, class = "Date") # "1899-12-30"
 #'   p_excel_dt( Sys.Date() )
 #'   p_excel_dt( Sys.time() )   
 #'   p_excel_dt( c(Sus)) 
+#'   
 #' @import lubridate
 #' @export 
 

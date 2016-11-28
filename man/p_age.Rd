@@ -20,8 +20,8 @@ Parses a character string to yield an age in years.
 }
 \examples{
   
-  c('34Y', '11M', '12D') \%>\% p_age           
-  1:10 \%>\% p_age
+  c('34Y', '11 M', '12d', '25 w' ) \%>\% p_age           
+  1:5 \%>\% p_age
   
 }
 
