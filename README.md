@@ -1,7 +1,8 @@
-Maybe this should be part of a `transformers` or 'mutators' package.
+
+- [ ] Consider factoring out p_ functions as part of a *transformers* or *mutators* or *parsers* package.
 
 
 ## Parsers: `p_`
 
-- p_age : parses an age/duration suffixed with `[YyMmWwDd]` and express the 
+- [x] p_age : parses an age/duration suffixed with `[YyMmWwDd]` and express the 
 age in years.
