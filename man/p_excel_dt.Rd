@@ -27,6 +27,7 @@ Date or POSIXct objects.
   p_excel_dt( Sys.Date() )
   p_excel_dt( Sys.time() )   
   p_excel_dt( c(Sus)) 
+  
 }
 \seealso{
 \code{\link[readxl]{read_excel}}
