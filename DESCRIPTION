@@ -1,8 +1,8 @@
 Package: coercion
 Type: Package
 Title: Utilities for Converting Values Between Types, Modes and Classes
-Version: 0.2.3
-Date: 2017-01-09
+Version: 0.2.4
+Date: 2017-02-03
 Author: Christopher Brown
 Maintainer: Christopher Brown <chris.brown@decisionpatterns.com>
 Description: Utilities for coercing between types, modes and classes

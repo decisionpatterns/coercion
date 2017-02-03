@@ -12,7 +12,7 @@
 #'   
 #' @examples 
 #'   
-#'   c('34Y', '11 M', '12d', '25 w' ) %>% p_age           
+#'   c( '25', '34Y', '11 M', '12d', '25 w' ) %>% p_age           
 #'   1:5 %>% p_age
 #'   
 #' @import magrittr
@@ -26,6 +26,13 @@ p_age <- function(x) {
   
   age <- numeric(length(x))
 
+  # NUMERICS TAKEN TO BE YEARS
+  suppressWarnings({ 
+    nums <- as.numeric(x) 
+  }) 
+  age[ ! is.na(nums) ] <- nums[ ! is.na(nums) ]
+  
+  
   # YEARS
   age[ x %>% str_detect("[Yy]$") ] = 
     x[ x %>% str_detect("[Yy]$") ] %>% str_replace("\\s*[Yy]$",'') %>%
