@@ -12,18 +12,29 @@ can(object, class)
 \item{class}{character; name of class to check if it can be coerced}
 }
 \value{
+A logical vector with the same length of \code{object} is returned. Values 
+are \code{TRUE} where \code{as} did not return an \code{NA}.
+
 logical
 }
 \description{
 Determine if the a vector can be coerced into the given clas
 }
+\details{
+\code{can}` relies on \code{try} and \code{as} to attempt to coerce 
+\code{object} to a certain class. T
+}
 \examples{
   can( 1.0, 'integer' )
   can( "foo", 'integer' )
-      
+  can( "1.234", 'numeric' )
+  can( "1.234", 'integer' )
+        
+  can( c("ABC","123"), 'integer')
+  # [1] FALSE  TRUE           
+                    
 }
 \seealso{
 \code{\link[methods]{canCoerce}}
   \code{\link[methods]{setAs}}
 }
-

@@ -2,9 +2,24 @@
 % Please edit documentation in R/p_excel_date.R
 \name{p_excel_dt}
 \alias{p_excel_dt}
+\alias{p_excel_dt.default}
+\alias{p_excel_dt.numeric}
+\alias{p_excel_dt.Date}
+\alias{p_excel_dt.POSIXct}
+\alias{p_excel_dt.character}
 \title{Parse Excel Numeric Date/Time}
 \usage{
 p_excel_dt(x)
+
+\method{p_excel_dt}{default}(x)
+
+\method{p_excel_dt}{numeric}(x)
+
+\method{p_excel_dt}{Date}(x)
+
+\method{p_excel_dt}{POSIXct}(x)
+
+\method{p_excel_dt}{character}(x)
 }
 \arguments{
 \item{x}{numeric; vector of Excel date/times expressed as numeric}
@@ -26,10 +41,11 @@ Date or POSIXct objects.
   p_excel_dt( c(40000,NA)) 
   p_excel_dt( Sys.Date() )
   p_excel_dt( Sys.time() )   
-  p_excel_dt( c(Sus)) 
+  
+  p_excel_dt( c("12/1/2016 12:01 PM") )
+  p_excel_dt( c("12/1/2016 12:01 PM", "12/1/2016", NA, "Unparsable", "4365") )
   
 }
 \seealso{
 \code{\link[readxl]{read_excel}}
 }
-

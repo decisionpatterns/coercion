@@ -2,6 +2,11 @@
 
 S3method(coerce_each,data.frame)
 S3method(coerce_each,data.table)
+S3method(p_excel_dt,Date)
+S3method(p_excel_dt,POSIXct)
+S3method(p_excel_dt,character)
+S3method(p_excel_dt,default)
+S3method(p_excel_dt,numeric)
 export(as.logic)
 export(as.logicYN)
 export(as.mutex)

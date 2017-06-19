@@ -23,4 +23,3 @@ Parse US Currency from text field
 \code{scales::dollar} which is the inverse operations that expresses a 
   numeric value as a scalar
 }
-

@@ -35,4 +35,3 @@ class
 \examples{
   coerce_each( iris,  "factor", "character" ) 
 }
-

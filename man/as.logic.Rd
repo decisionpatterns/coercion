@@ -42,4 +42,3 @@ by \code{true} or \code{false} become \code{NA}
   \code{\link[base]{logical}} \cr 
   \code{\link[base]{NA}} \cr
 }
-

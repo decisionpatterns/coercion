@@ -16,4 +16,3 @@ Parse percent value
 \details{
 Returns numeric value with the percentage sign stripped
 }
-

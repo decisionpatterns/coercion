@@ -12,4 +12,3 @@ excel_origin
 Date origin according to Microsoft Excel
 }
 \keyword{datasets}
-

@@ -26,4 +26,3 @@ fields occuring at the end of the character.
 \seealso{
 The stringr package.
 }
-

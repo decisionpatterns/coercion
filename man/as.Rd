@@ -3,8 +3,8 @@
 \name{as}
 \alias{as}
 \alias{as,character}
+\alias{as}
 \title{Convert character to factor}
 \description{
 Converts a character to facor
 }
-

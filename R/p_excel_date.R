@@ -29,17 +29,61 @@ excel_origin <- structure(-25569, class = "Date") # "1899-12-30"
 #'   p_excel_dt( c(40000,NA)) 
 #'   p_excel_dt( Sys.Date() )
 #'   p_excel_dt( Sys.time() )   
-#'   p_excel_dt( c(Sus)) 
+#'   
+#'   p_excel_dt( c("12/1/2016 12:01 PM") )
+#'   p_excel_dt( c("12/1/2016 12:01 PM", "12/1/2016", NA, "Unparsable", "4365") )
 #'   
 #' @import lubridate
 #' @export 
 
 p_excel_dt <- function(x) UseMethod('p_excel_dt') 
 
+#' @rdname p_excel_dt
+#' @export  
 p_excel_dt.default <- function(x) p_excel_dt(as.numeric(x))
 
-p_excel_dt.numeric <- function(x) excel_origin + lubridate::ddays(x)
 
+#' @rdname p_excel_dt
+#' @export
+p_excel_dt.numeric <- function(x) {   # limit 24855
+  
+  ret <- .POSIXct(rep(NA,length(x)))
+  
+  suppressWarnings( pass <- excel_origin + lubridate::ddays( x ) )
+  ret[ ! is.na(pass) ] <- pass[! is.na(pass) ]
+
+  ret
+}
+  
+#' @rdname p_excel_dt 
+#' @export
 p_excel_dt.Date <- function(x) x
 
+#' @rdname p_excel_dt
+#' @export
 p_excel_dt.POSIXct <- function(x) x 
+
+#' @rdname p_excel_dt
+#' @export
+p_excel_dt.character <- function(x) {
+
+  # Try numeric excel date first
+  ret <- .POSIXct(rep(NA,length(x)))
+  
+  suppressWarnings( pass <- mdy_hms(x) )
+  ret <- na_replace(ret,pass)
+  if( ! any(is.na(ret) ) ) return(ret)
+  
+  suppressWarnings( pass <- mdy_hm(x) )
+  ret <- na_replace( ret, pass) 
+  if( ! any(is.na(ret) ) ) return(ret)
+  
+  suppressWarnings( pass <- mdy(x) )
+  ret <- na_replace( ret, pass )
+  if( ! any(is.na(ret) ) ) return(ret)
+  
+  suppressWarnings( pass <- p_excel_dt( as.numeric(x) ) )
+  ret <- na_replace( ret, pass )
+ 
+  return(ret)  
+}

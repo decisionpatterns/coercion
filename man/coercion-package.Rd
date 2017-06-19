@@ -14,4 +14,3 @@ classes, types and modes.
   coerce_each( iris, 'character' )
   
 }
-

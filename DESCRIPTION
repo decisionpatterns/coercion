@@ -1,18 +1,19 @@
 Package: coercion
 Type: Package
 Title: Utilities for Converting Values Between Types, Modes and Classes
-Version: 0.2.4
-Date: 2017-02-03
+Version: 0.2.5
+Date: 2017-06-19
 Author: Christopher Brown
 Maintainer: Christopher Brown <chris.brown@decisionpatterns.com>
 Description: Utilities for coercing between types, modes and classes
 License: Decision Patterns Client License
 Recommends: data.table
-Depends:
-    lubridate (>= 1.6.0)
 Suggests:
     testthat (>= 1.0.2.9000),
     readxl (>= 0.1.1)
 Imports:
-    magrittr (>= 1.5)
-RoxygenNote: 5.0.1
+    magrittr (>= 1.5),
+    lubridate (>= 1.6.0.9009),
+    na.actions (>= 0.5.1)
+RoxygenNote: 6.0.1.9000
+Repository: CRAN 

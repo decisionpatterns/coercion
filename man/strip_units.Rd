@@ -24,4 +24,3 @@ example for comma left in.
   strip_units( '32 ft/s^2')
   strip_units( '1,001 nights' )
 }
-
