@@ -1,4 +1,6 @@
-#' Determine if the a vector can be coerced into the given clas
+#' can_be
+#' 
+#' Determine if the a vector can be coerced into the given class
 #' 
 #' @param object object; 
 #' @param class character; name of class to check if it can be coerced
@@ -8,6 +10,7 @@
 #' \code{can}` relies on \code{try} and \code{as} to attempt to coerce 
 #' \code{object} to a certain class. T 
 #' 
+#' \code{can_be} is an alias for \code{can}.
 #' 
 #' @return 
 #' 
@@ -31,7 +34,7 @@
 #' @return logical 
 #' @export
 
-can <- function( object, class ) {
+can_be <- function( object, class ) {
   
   show.errors <- getOption("show.error.messages")
   if( show.errors == TRUE )
@@ -45,4 +48,7 @@ can <- function( object, class ) {
   
 }
 
-can_be <- can
+#' @rdname can_be
+#' @export
+
+can <- can_be
