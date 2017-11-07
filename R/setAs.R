@@ -1,16 +1,16 @@
-# Set coercion funtions. 
-#' Convert character to factor
+#' Conversions 
 #' 
-#' Converts a character to facor
+#' S4 Converts a character to facor
 #' 
 #' @name as
 #' @family character
 #' @aliases as,character
+#' @import methods
 
-setAs( from='character', to='factor', function(from) factor(from) )
+methods::setAs( from='character', to='factor', function(from) factor(from) )
 
 
 #' @name as
 #' @family logical
 
-setAs( from="logical", to="factor", function(from) as.factor(from) )
+methods::setAs( from="logical", to="factor", function(from) as.factor(from) )

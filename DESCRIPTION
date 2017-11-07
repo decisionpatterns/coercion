@@ -2,8 +2,8 @@ Package: coercion
 Type: Package
 Title: Utilities for Coercing (and Parsing) Values Between Types, Modes and 
     Classes
-Version: 0.2.5
-Date: 2017-06-19
+Version: 0.3.0
+Date: 2017-11-07
 Author: Christopher Brown
 Maintainer: Christopher Brown <chris.brown@decisionpatterns.com>
 Description: This package provides families of functions that coerce vectors 
@@ -16,6 +16,7 @@ Suggests:
     readxl (>= 0.1.1),
     units
 Imports:
+    methods,
     magrittr (>= 1.5),
     lubridate (>= 1.6.0.9009),
     na.actions (>= 0.5.1)

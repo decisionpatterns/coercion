@@ -4,7 +4,7 @@
 \alias{as}
 \alias{as,character}
 \alias{as}
-\title{Convert character to factor}
+\title{Conversions}
 \description{
-Converts a character to facor
+S4 Converts a character to facor
 }

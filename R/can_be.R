@@ -7,48 +7,90 @@
 #' 
 #' @details 
 #' 
-#' \code{can}` relies on \code{try} and \code{as} to attempt to coerce 
-#' \code{object} to a certain class. T 
+#' `can_be` determines if an object can reliably coerced to `class`, returning 
+#' `TRUE` if **ALL** values can be coerced. 
 #' 
-#' \code{can_be} is an alias for \code{can}.
+#' It uses the results of`try(as(...))` under the hood.  See `try_as()` for 
+#' details .
 #' 
 #' @return 
 #' 
-#' A logical vector with the same length of \code{object} is returned. Values 
-#' are \code{TRUE} where \code{as} did not return an \code{NA}.
-#' 
+#' A logical scalar indicating whether `object` can be coerced to class `Class`
 #' 
 #' @seealso 
-#'   \code{\link[methods]{canCoerce}}
-#'   \code{\link[methods]{setAs}}
+#'   
+#'  - `try_as()` : 
+#'  - `methods::as()`
+#'  - `methods::canCoerce()`
+#'  - `methods::setAs()``
 #'   
 #' @examples 
-#'   can( 1.0, 'integer' )
-#'   can( "foo", 'integer' )
-#'   can( "1.234", 'numeric' )
-#'   can( "1.234", 'integer' )
-#'         
-#'   can( c("ABC","123"), 'integer')
-#'   # [1] FALSE  TRUE           
-#'                     
+#' 
+#'   nums <- seq(1.0,2.0,0.2)
+#'   ints <- 1:5
+#'   chrs <- letters[1:5]
+#'   dts  <- seq( Sys.Date(), length.out=5, by="1 week") 
+#'   posx <- as.POSIXct( dts )
+#'  
+#'   cls <- c('numeric','integer','character','Date','POSIXct')
+#'   
+#'   nums %>% can_be("numeric")
+#'   nums %>% can_be("integer")
+#'   nums %>% can_be("character")
+#'   nums %>% can_be("Date")
+#'   nums %>% can_be("POSIXct") 
+#'     
+#'   ints %>% can_be("numeric")
+#'   ints %>% can_be("integer")
+#'   ints %>% can_be("character")
+#'   ints %>% can_be("Date")
+#'   ints %>% can_be("POSIXct") 
+#'
+#'   chrs %>% can_be("numeric")
+#'   chrs %>% can_be("integer")
+#'   chrs %>% can_be("character")
+#'   chrs %>% can_be("Date")
+#'   chrs %>% can_be("POSIXct") 
+#' 
+#'   dts %>% can_be("numeric")
+#'   dts %>% can_be("integer")
+#'   dts %>% can_be("character")
+#'   dts %>% can_be("Date")
+#'   dts %>% can_be("POSIXct") 
+#'  
+#'   posx %>% can_be("numeric")
+#'   posx %>% can_be("integer")
+#'   posx %>% can_be("character")
+#'   posx %>% can_be("Date")
+#'   posx %>% can_be("POSIXct") 
+#'   
+#'
+#' @md                     
 #' @return logical 
 #' @export
 
-can_be <- function( object, class ) {
+can_be <- function(object, class) {
+
+  # ALL NA are always TRUE
+  if( all( is.na(object) ) ) { 
+    # what <- deparse(substitute(object))
+    warning( 
+      paste0( "Object is contains only NA values-- can be, ", class, " by definition") 
+    ) 
+    return(TRUE) 
+ }
   
-  show.errors <- getOption("show.error.messages")
-  if( show.errors == TRUE )
-    options( show.error.messages=FALSE )
-    
-  try( {cancan <- as(object,class)}, silent=TRUE )
-  if( show.errors == TRUE )
-    options( show.error.messages=show.errors )
-  
-  ! is.na(cancan)
+ try_can_be <-try_as( object, class )  
+ is( try_can_be, class )
   
 }
+
 
 #' @rdname can_be
 #' @export
 
-can <- can_be
+can <- function(...) {
+  warning( "Function 'can' is deprecated. Use 'can_be' instead.") 
+  can_be(...)
+}
+
