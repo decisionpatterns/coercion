@@ -13,12 +13,11 @@ Recommends: data.table
 Suggests:
     testthat (>= 1.0.2.9000),
     readxl (>= 0.1.1),
-    units
+    units (>= 0.4.0)
 Imports:
     methods,
     magrittr (>= 1.5),
-    lubridate (>= 1.6.0.9009),
-    na.actions (>= 0.5.1)
+    lubridate (>= 1.6.0.9009)
 RoxygenNote: 6.0.1.9000
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
