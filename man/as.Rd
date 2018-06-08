@@ -3,8 +3,9 @@
 \name{as}
 \alias{as}
 \alias{as,character}
-\alias{as}
 \title{Conversions}
 \description{
 S4 Converts a character to facor
 }
+\concept{character}
+\concept{logical}

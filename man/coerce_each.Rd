@@ -4,7 +4,7 @@
 \alias{coerce_each}
 \alias{coerce_each.data.frame}
 \alias{coerce_each.data.table}
-\title{Coerce each elements of a container class from one class to a different 
+\title{Coerce each elements of a container class from one class to a different
 class}
 \usage{
 coerce_each(x, from, to)
@@ -14,7 +14,7 @@ coerce_each(x, from, to)
 \method{coerce_each}{data.table}(x, from, to)
 }
 \arguments{
-\item{x}{A container object such as a \code{list}, \code{data.frame} or 
+\item{x}{A container object such as a \code{list}, \code{data.frame} or
 \code{data.table}}
 
 \item{from}{A character vector containing the classes to coerce from}
@@ -29,7 +29,7 @@ An object with the same class as \code{x}
 \code{data.table}
 }
 \description{
-Coerce each elements of a container class from one class to a different 
+Coerce each elements of a container class from one class to a different
 class
 }
 \examples{

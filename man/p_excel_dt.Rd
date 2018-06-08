@@ -25,8 +25,8 @@ p_excel_dt(x)
 \item{x}{numeric; vector of Excel date/times expressed as numeric}
 }
 \value{
-A Date object if \code{x} is integer; a POSIXct object if \code{x} is 
-  numeric. \cr
+A Date object if \code{x} is integer; a POSIXct object if \code{x} is
+numeric. \cr
 }
 \description{
 Parse Excel Numeric Date/Time

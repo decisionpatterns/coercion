@@ -65,6 +65,6 @@ warnings are surpressed; errors return NULL
 }
 \seealso{
 \itemize{
-\item \code{can_be()}
+\item \code{\link[=can_be]{can_be()}}
 }
 }

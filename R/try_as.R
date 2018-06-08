@@ -10,8 +10,9 @@
 #'  warnings are surpressed; errors return NULL  
 #' 
 #' @seealso 
-#'  - `can_be()`
+#'  - [can_be()]
 #'  
+#' @md  
 #' @return 
 #'   a object of the new class or `NULL` if as produces an error 
 #'   

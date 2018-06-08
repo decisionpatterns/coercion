@@ -23,12 +23,12 @@ p_yn(x)
 \code{logical} vector version of \code{x}.
 }
 \description{
-Converts vector to logical based on user specified parameters for the TRUE 
+Converts vector to logical based on user specified parameters for the TRUE
 and false values
 }
 \details{
 \code{as.logic} coerces \code{x} into a logical vector in which the values
-of specified by \code{true} become \code{TRUE}. etc. Values not identified 
+of specified by \code{true} become \code{TRUE}. etc. Values not identified
 by \code{true} or \code{false} become \code{NA}
 }
 \examples{
@@ -39,6 +39,6 @@ by \code{true} or \code{false} become \code{NA}
 }
 \seealso{
 \code{\link[base]{as.logical}} \cr
-  \code{\link[base]{logical}} \cr 
-  \code{\link[base]{NA}} \cr
+\code{\link[base]{logical}} \cr
+\code{\link[base]{NA}} \cr
 }

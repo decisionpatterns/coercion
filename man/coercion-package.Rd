@@ -5,6 +5,9 @@
 \alias{coercion package}
 \alias{coercion package-package}
 \title{coercion package}
+\description{
+coercion package
+}
 \details{
 The coercion package contains utilities for coercing between various
 classes, types and modes.

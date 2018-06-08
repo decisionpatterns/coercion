@@ -20,9 +20,11 @@ factor
 Conert mutually exclusive  columns to a factor
 }
 \note{
-- This performs the opposite function of the dummies package. \cr
-  - Ensure the variables are integer or logical or can be coerced to on
-  - Belong in dummies package
+\itemize{
+\item This performs the opposite function of the dummies package. \cr
+\item Ensure the variables are integer or logical or can be coerced to on
+\item Belong in dummies package
+}
 }
 \examples{
   # as.mutex( ci2, c('saltsnackyuk', 'saltsnackok', 'saltsnackyum' ), ordered=TRUE )

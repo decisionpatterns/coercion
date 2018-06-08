@@ -15,7 +15,7 @@ coerce_integer(x, strip_units = TRUE)
 A numeric field
 }
 \description{
-Coerces a value to numeric by removing any leading non-digit, non-decimal 
+Coerces a value to numeric by removing any leading non-digit, non-decimal
 fields occuring at the end of the character.
 }
 \examples{

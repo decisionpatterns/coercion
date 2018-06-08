@@ -1,10 +1,24 @@
 # TODO 
 
+
+## Parsers: `p_`
+
+- [x] p_age : parses an age/duration suffixed with `[YyMmWwDd]` and express the age in years.
+
+ - [ ] Consider factoring out p_ functions as part of a **mutators**, *transformers* or 
+       *parsers* package.
+
+ - [-] can_be_all -- see which_can_be
+
  - p_excel_dt needs to cascade through options perhaps using *anytime* package.
  - can need to be refactor to think how it would work with  
    - recursive objects
    - objects with length
- - possible package name: anyany
+ - possible package name: anyany`
+ 
+ - [ ] logical variant of `which_can_be` and `which_cant_be`
+ - [ ] strict argument of `which_can_be` and `which_cant_be`
+
  - coerce(x, ..., env)
    ... : list of functions or expressions to try in order element-wise; first 
          function that produces a non-NA value gets priority
@@ -15,13 +29,14 @@
     
    x %>% ifelse(is.na(y),y,z)   
    
- - cast as an alias for coerce?
+ - [-] cast as an alias for coerce? No. Why so complicated?
 
  - repalce `p_` -> `as_` prefixes.
    - This allows `as_logic` to become `as_logical`
    
  - What is the relationship to setAs? 
   
+
 # Mixed formats
 
 One difficulty is mixed format colums. Usually this occurs when people are 

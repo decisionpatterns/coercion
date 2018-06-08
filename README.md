@@ -1,8 +1,15 @@
+# coercion 
 
-- [ ] Consider factoring out p_ functions as part of a *transformers* or *mutators* or *parsers* package.
+ Functions for testing coercability and coercing vectors between various common 
+ classes, types and modes. 
+
+The *coercion* packages provides functions that test for the coercability of 
+various vectors
 
 
-## Parsers: `p_`
+## Installation 
 
-- [x] p_age : parses an age/duration suffixed with `[YyMmWwDd]` and express the 
-age in years.
+
+
+## Im
+

@@ -4,6 +4,7 @@
 \alias{can_be}
 \alias{can}
 \alias{which_can_be}
+\alias{which_cant_be}
 \alias{can_be.which}
 \title{can_be}
 \usage{
@@ -12,6 +13,8 @@ can_be(object, class)
 can(...)
 
 which_can_be(object, class)
+
+which_cant_be(object, class)
 
 can_be.which(...)
 }
@@ -37,6 +40,11 @@ Determine if the a vector can be coerced into the given class
 
 It uses the results of\code{try(as(...))} under the hood.  See \code{try_as()} for
 details .
+
+\code{which_can_be} provides indices of \code{object`` that **can** be coerced to the given}class\code{.}NA` can always be coerced.
+
+\code{which_cant_be} provides indices of \code{object} that \strong{can't} be coerced to the
+given \code{class}. \code{NA} can always be coerced.
 }
 \examples{
 
@@ -117,6 +125,11 @@ details .
   posx \%>\% which_can_be("character")
   posx \%>\% which_can_be("Date")
   posx \%>\% which_can_be("POSIXct") 
+  
+  
+  x <- c( 1:3, letters[1:3], NA )
+  x \%>\% which_can_be( "integer" )
+  x \%>\% which_cant_be( "integer" )
   
 }
 \seealso{

@@ -10,14 +10,14 @@ strip_units(x)
 \item{x}{vector, usually character.}
 }
 \value{
-A vector of the same class as \code{x}, but with the trailing 
+A vector of the same class as \code{x}, but with the trailing
 non-number elements removed. It does not perform a coercion.
 }
 \description{
 Strip everything after the first set of number like items
 }
 \note{
-consider adding an \code{as} parameter to perform coercions. See 2nd 
+consider adding an \code{as} parameter to perform coercions. See 2nd
 example for comma left in.
 }
 \examples{

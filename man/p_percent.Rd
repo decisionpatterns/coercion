@@ -7,7 +7,7 @@
 p_percent(x)
 }
 \arguments{
-\item{x}{character; a value that can be coerced to a character that has a 
+\item{x}{character; a value that can be coerced to a character that has a
 percentage sign at the end}
 }
 \description{

@@ -9,7 +9,7 @@ p_dollar(x)
 \arguments{
 \item{x}{character; text currency values
 
-Parses a character represented numeric USD value by removing \code{$} and 
+Parses a character represented numeric USD value by removing \code{$} and
 \code{","} values.}
 }
 \description{
@@ -20,6 +20,6 @@ Parse US Currency from text field
 
 }
 \seealso{
-\code{scales::dollar} which is the inverse operations that expresses a 
-  numeric value as a scalar
+\code{scales::dollar} which is the inverse operations that expresses a
+numeric value as a scalar
 }

@@ -3,12 +3,11 @@ Type: Package
 Title: Utilities for Coercing (and Parsing) Values Between Types, Modes and 
     Classes
 Version: 0.3.0
-Date: 2017-11-07
+Date: 2018-06-08
 Author: Christopher Brown
 Maintainer: Christopher Brown <chris.brown@decisionpatterns.com>
-Description: This package provides families of functions that coerce vectors 
-    between various common classes, types and modes. Additional utilities, 
-    'can_be', test if coercion is possible. 
+Description: Functions for testing coercability and coercing vectors 
+    between various common classes, types and modes. 
 License: Decision Patterns Client License
 Recommends: data.table
 Suggests:
@@ -21,4 +20,6 @@ Imports:
     lubridate (>= 1.6.0.9009),
     na.actions (>= 0.5.1)
 RoxygenNote: 6.0.1.9000
+Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
 Repository: CRAN 
