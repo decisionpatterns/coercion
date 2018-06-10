@@ -3,7 +3,7 @@
   suppressWarnings( try( v <- utils::packageVersion(pkgname, libname), silent = TRUE ))
   version <- if( exists('v') ) paste0("-", v ) else ""
 
-  dt <- read.dcf( system.file("DESCRIPTION", package = "coercion"), "Date" )  
+  dt <- read.dcf( system.file("DESCRIPTION", package = pkgname ), "Date" )  
   yr <- substr(dt,1,4)
   
   if( interactive() )
