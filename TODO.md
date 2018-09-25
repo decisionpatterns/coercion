@@ -1,6 +1,11 @@
 # TODO 
 
 
+ - as.logic() 
+   - Add `na` parameter
+   - support regex for `true`, `false`, `na` 
+   
+
 ## Parsers: `p_`
 
 - [x] p_age : parses an age/duration suffixed with `[YyMmWwDd]` and express the age in years.
