@@ -5,7 +5,7 @@
 \alias{tf_pass}
 \title{Check transform}
 \usage{
-tf_check(data, expr, .all = FALSE)
+tf_check(data, expr, .key = TRUE, .all = FALSE)
 
 tf_pass(...)
 }
@@ -41,6 +41,9 @@ Check transformation values
   iris \%>\% tf_check( Species \%>\% as.character() )
   iris \%>\% tf_check( Species \%>\% as.numeric()  )
 
+  iris \%>\% setkey( Sepal.Length )
+  iris \%>\% tf_check( Species \%>\% as.character(), .all=TRUE )
+  
   iris \%>\% tf_pass( Species \%>\% as.character() )
   iris \%>\% tf_pass( Species \%>\% as.numeric()  )
 

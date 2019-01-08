@@ -28,6 +28,9 @@
 #'   iris %>% tf_check( Species %>% as.character() )
 #'   iris %>% tf_check( Species %>% as.numeric()  )
 #' 
+#'   iris %>% setkey( Sepal.Length )
+#'   iris %>% tf_check( Species %>% as.character(), .all=TRUE )
+#'   
 #'   iris %>% tf_pass( Species %>% as.character() )
 #'   iris %>% tf_pass( Species %>% as.numeric()  )
  
@@ -35,7 +38,7 @@
 #' @import data.table      
 #' @export 
 
-tf_check <- function(data, expr, .all=FALSE ) { 
+tf_check <- function(data, expr, .key=TRUE, .all=FALSE ) { 
   
   d <- copy(data)
   setDT(d)
@@ -44,9 +47,14 @@ tf_check <- function(data, expr, .all=FALSE ) {
   vars <- all.names(expr)
   vars <- intersect(vars, names(data))  # args to expr
 
+  if( .key && haskey(d) )
+    ret <- d[ , c( key(d), vars ), with=FALSE ] else 
+    ret <- d[ , vars , with=FALSE ]
+  
+  # ADD .OUT TRANSFORMATION
   ret <- cbind(
-     d[ , .( .OUT=suppressWarnings( eval(expr) ) ) ]
-   , d[ , ..vars ]                 # args 
+       ret 
+    ,  d[ , .( .OUT=suppressWarnings( eval(expr) ) ) ]
   ) 
 
   # All transformation 
@@ -59,6 +67,7 @@ tf_check <- function(data, expr, .all=FALSE ) {
   
 }
 
+
 #' @rdname tf_check
 #' @export 
 
@@ -68,3 +77,9 @@ tf_pass <- function(...) {
   if( nrow(d) == 0 ) TRUE else FALSE
   
 }
+
+
+
+
+    
+  

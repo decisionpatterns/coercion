@@ -1,3 +1,8 @@
+# Version 0.4.0 
+
+ - Add `tf_try()` to try multiple transformation of a vector.  
+ 
+ 
 # Version 0.3.0 
 
  - Refactor `can_be` code:
