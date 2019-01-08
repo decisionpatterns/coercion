@@ -2,9 +2,12 @@
 % Please edit documentation in R/tf_check.R
 \name{tf_check}
 \alias{tf_check}
+\alias{tf_pass}
 \title{Check transform}
 \usage{
 tf_check(data, expr, .all = FALSE)
+
+tf_pass(...)
 }
 \arguments{
 \item{data}{table of data to function as environment for \code{expr}}
@@ -13,6 +16,9 @@ tf_check(data, expr, .all = FALSE)
 
 \item{.all}{logical whether to display all the observation or
 just the failed transformations. (Default: `FALSE``)}
+
+\item{...}{arguments to \code{tf_check}
+`}
 }
 \value{
 A data.table with the result of the expression followed by the
@@ -34,5 +40,8 @@ Check transformation values
 
   iris \%>\% tf_check( Species \%>\% as.character() )
   iris \%>\% tf_check( Species \%>\% as.numeric()  )
+
+  iris \%>\% tf_pass( Species \%>\% as.character() )
+  iris \%>\% tf_pass( Species \%>\% as.numeric()  )
 
 }

@@ -6,7 +6,8 @@
 #' @param expr expression to evaluate
 #' @param .all logical whether to display all the observation or
 #'   just the failed transformations. (Default: `FALSE``)
-#' 
+#' @param ... arguments to `tf_check` 
+#' `
 #' @return 
 #' 
 #' A data.table with the result of the expression followed by the
@@ -27,6 +28,10 @@
 #'   iris %>% tf_check( Species %>% as.character() )
 #'   iris %>% tf_check( Species %>% as.numeric()  )
 #' 
+#'   iris %>% tf_pass( Species %>% as.character() )
+#'   iris %>% tf_pass( Species %>% as.numeric()  )
+ 
+#' 
 #' @import data.table      
 #' @export 
 
@@ -37,11 +42,11 @@ tf_check <- function(data, expr, .all=FALSE ) {
   
   expr <- substitute(expr)
   vars <- all.names(expr)
-  vars <- intersect(vars, names(data))
+  vars <- intersect(vars, names(data))  # args to expr
 
   ret <- cbind(
-     d[ , .( .OUT=eval(expr) ) ]
-   , d[ , ..vars ] 
+     d[ , .( .OUT=suppressWarnings( eval(expr) ) ) ]
+   , d[ , ..vars ]                 # args 
   ) 
 
   # All transformation 
@@ -49,7 +54,17 @@ tf_check <- function(data, expr, .all=FALSE ) {
     
   # Failed Transformation 
   ret[ is.na(.OUT) &                                    # Failed Transform 
-       ! (iris[ , ..vars ] %>% apply( 1, anyNA ) )    # No Missing Arguments 
+       ! ( data[ , ..vars ] %>% apply( 1, anyNA ) )     # No Missing args 
   ]
+  
+}
+
+#' @rdname tf_check
+#' @export 
+
+tf_pass <- function(...) { 
+  
+  d <- tf_check(..., .all=FALSE ) 
+  if( nrow(d) == 0 ) TRUE else FALSE
   
 }

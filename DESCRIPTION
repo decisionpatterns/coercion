@@ -17,7 +17,8 @@ Suggests:
 Imports:
     methods,
     magrittr (>= 1.5),
-    lubridate (>= 1.6.0.9009)
+    lubridate (>= 1.6.0.9009), 
+    data.table
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
