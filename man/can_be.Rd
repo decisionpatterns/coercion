@@ -41,7 +41,7 @@ Determine if the a vector can be coerced into the given class
 It uses the results of\code{try(as(...))} under the hood.  See \code{try_as()} for
 details .
 
-\code{which_can_be} provides indices of \code{object`` that **can** be coerced to the given}class\code{.}NA` can always be coerced.
+\code{which_can_be} provides indices of \code{object`` that **can** be coerced to the given  }class\code{.  }NA` can always be coerced.
 
 \code{which_cant_be} provides indices of \code{object} that \strong{can't} be coerced to the
 given \code{class}. \code{NA} can always be coerced.

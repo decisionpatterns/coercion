@@ -18,7 +18,7 @@ Imports:
     methods,
     magrittr (>= 1.5),
     lubridate (>= 1.6.0.9009)
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 Repository: CRAN 
