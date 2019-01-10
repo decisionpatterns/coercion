@@ -47,7 +47,7 @@ as.logic <- function(x, true=TRUE, false=FALSE) {
 as.logicYN <- function(x) 
   as.logic( 
     x
-    , true = c("YES","Yes","yes","Y","y")
+    , true = c("YES","Yes","yes","Y","y")    # All regex
     , false = c("NO", "No", "no", "N", "n") 
   )
 

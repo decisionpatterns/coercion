@@ -2,8 +2,8 @@ Package: coercion
 Type: Package
 Title: Utilities for Coercing (and Parsing) Values Between Types, Modes and 
     Classes
-Version: 0.4.0
-Date: 2019-01-08
+Version: 0.5.0
+Date: 2019-01-10
 Author: Christopher Brown
 Maintainer: Christopher Brown <chris.brown@decisionpatterns.com>
 Description: Functions for testing coercability and coercing vectors 
