@@ -5,6 +5,11 @@
 Provide a more robust infra-structure for transformation of values esp
 in a pipeline.
 
+ - [ ] as_fct() 
+ 
+ - [x] dry_run()
+   - [ ] Add unique= argument
+ 
  - [x] Conditional Transformations
        tf_if : Only transform if there are no errors
    - [ ] Rename `tf_try()` to `tf_or()` ? 
