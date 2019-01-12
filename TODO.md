@@ -5,7 +5,16 @@
 Provide a more robust infra-structure for transformation of values esp
 in a pipeline.
 
- - [ ] as_fct() 
+ - We need to establish the difference *if any* between: 
+    - transformation, 
+    - map
+    - lookup
+    - mutate 
+    - coercion, etc.  
+   Reorganize/rename accordingly.
+
+ - [ ] as_fct(), as_num(), as_int(), as_dt(), as_date(), as_time(), ...
+   - Maybe clear up type(of), mode, class
  
  - [x] dry_run()
    - [ ] Add unique= argument

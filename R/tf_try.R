@@ -3,7 +3,8 @@
 #' Attempt multiple transformations of a vector
 #'   
 #' @param x vector
-#' @param fun 
+#' @param fun function to try out on vector
+#' @param ... additional arguments to pass to fun
 #' 
 #' @details 
 #' 
@@ -36,7 +37,7 @@
 #'      
 #' @export 
 
-tf_try <- function(x, fun) { 
+tf_try <- function(x, fun, ...) { 
 
   if( is.tf_try(x) ) { 
     # Identify previous failures 
@@ -49,7 +50,7 @@ tf_try <- function(x, fun) {
   } else {
   
     ret <- suppressWarnings( 
-             fun(x) %>% 
+             fun(x, ...) %>% 
                add_subclass('tf_try') %>%
                add_orig(x)
            )
@@ -80,7 +81,11 @@ print.tf_try <- function(x, ...) {
     print()
 }
 
-
+#' @details 
+#' 
+#' `tf_end` stops the trying of values by stripping the `tf_try` class
+#' and stops recording the original values.
+#' 
 #' @rdname tf_try
 #' @export 
 

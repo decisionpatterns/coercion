@@ -7,7 +7,7 @@
 \alias{tf_end}
 \title{Try multiple transformations}
 \usage{
-tf_try(x, fun)
+tf_try(x, fun, ...)
 
 is.tf_try(x)
 
@@ -18,7 +18,9 @@ tf_end(x)
 \arguments{
 \item{x}{vector}
 
-\item{fun}{}
+\item{fun}{function to try out on vector}
+
+\item{...}{additional arguments to pass to fun}
 }
 \description{
 Attempt multiple transformations of a vector
@@ -33,6 +35,9 @@ allowing for multiple attempts at transforming the vectors\preformatted{ x \%>\%
 
 This is very handy for transforming data that allowed or didn't enforce a
 particular format such as a date.
+
+\code{tf_end} stops the trying of values by stripping the \code{tf_try} class
+and stops recording the original values.
 }
 \examples{
   
