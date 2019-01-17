@@ -5,6 +5,16 @@
 Provide a more robust infra-structure for transformation of values esp
 in a pipeline.
 
+ - [ ] `tf_end` should be changed to `tf_commit` or `mutate_commit`
+       and have 
+
+
+ - [ ] `tf_try()` should track **marginal** and **overall** transformation
+       success. It could even look at all possible orderings of the 
+       transformations (n!) for which is most efficient for a given 
+       input vector.
+
+ - [ ] `tf_revert()`  in `tf_try()` 
  - We need to establish the difference *if any* between: 
     - transformation, 
     - map
