@@ -13,8 +13,6 @@
 #' A data.table with the result of the expression followed by the
 #' names used from the columns
 #' 
-#' 
-#' 
 #'  - unexpected where one or more of the args are na
 #'  - any missing
 #'  - failures : no missing args,  

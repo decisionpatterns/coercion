@@ -51,6 +51,15 @@ as.logicYN <- function(x)
     , false = c("NO", "No", "no", "N", "n") 
   )
 
+#' @details 
+#' 
+#' as.logicPN converts Positve
+#' 
+#' @rdname as.logic
+#' @export
+as.logicPN <- function(x) 
+  as.logic( true = c('positive','Positive'), false=c('negative', 'Negative') ) 
+
 
 #' @rdname as.logic
 #' @export

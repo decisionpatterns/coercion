@@ -8,6 +8,11 @@ in a pipeline.
  - [ ] `tf_end` should be changed to `tf_commit` or `mutate_commit`
        and have 
 
+ - [ ] `tf_try()` should be able to selectively transform. 
+
+ - [ ] `tf_try()` should not require `. %>% ...` syntax for transformations and 
+       adopt the magrittr syntax where the first argument is passed into the
+       expression.
 
  - [ ] `tf_try()` should track **marginal** and **overall** transformation
        success. It could even look at all possible orderings of the 
@@ -23,6 +28,8 @@ in a pipeline.
     - coercion, etc.  
    Reorganize/rename accordingly.
 
+ - [ ] tf_try should not introduce missing values.
+ 
  - [ ] as_fct(), as_num(), as_int(), as_dt(), as_date(), as_time(), ...
    - Maybe clear up type(of), mode, class
  

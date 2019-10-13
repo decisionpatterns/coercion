@@ -27,3 +27,17 @@ Have a number of coercisions
  - Try the first using na_replace 
    replace na values with the 
 
+
+### Validations
+
+Transformations are all about capturing data in its rawest form an 
+capturing its data using semantics, context, etc. 
+
+It is expected that there is a validation for the informations. For example, 
+if you are expecting the height of a person, you know that a person's height
+should be a numeric, continuous value and can not be more than [8'11.1"](http://www.guinnessworldrecords.com/world-records/tallest-man-ever).
+
+These validattions should be included.
+
+
+### Units

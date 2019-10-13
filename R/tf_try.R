@@ -3,13 +3,13 @@
 #' Attempt multiple transformations of a vector
 #'   
 #' @param x vector
-#' @param fun function to try out on vector
+#' @param fun function to try out on vector. (Default: [base::identity()]
 #' @param ... additional arguments to pass to fun
 #' 
 #' @details 
 #' 
-#'   `tf_try` transforms the data but keep track of the original vector
-#' allowing for multiple attempts at transforming the vectors 
+#' `tf_try` transforms a vector though multiple steps while ensuring that `NA`
+#' values are not introduced. 
 #' 
 #'      x %>% 
 #'        tf_try( ... ) %>% 
@@ -19,11 +19,13 @@
 #' This is very handy for transforming data that allowed or didn't enforce a 
 #' particular format such as a date.
 #' 
+#' `fun` is the function to "try: 
+#' 
 #' @examples 
 #'   
 #'  # Contrived example sqrt(-x) 
 #'   -2:2 %>%  
-#'     tf_try( sqrt ) %>% 
+#'     tf_try( sqrt ) %>%              # UNDEF: sqrt(-1)
 #'     tf_try( . %>% abs %>% sqrt )
 #'   
 #'  # Shift x  
@@ -37,9 +39,10 @@
 #'      
 #' @export 
 
-tf_try <- function(x, fun, ...) { 
+tf_try <- function(x, fun=identity(), ...) { 
 
   if( is.tf_try(x) ) { 
+    
     # Identify previous failures 
     orig <- attr(x, 'orig')
     wh <- is.na(x) & ! is.na(orig)   # i.e. Previous failures 
@@ -49,11 +52,14 @@ tf_try <- function(x, fun, ...) {
     
   } else {
   
-    ret <- suppressWarnings( 
+    y <--suppressWarnings( 
              fun(x, ...) %>% 
                add_subclass('tf_try') %>%
                add_orig(x)
            )
+    
+    ret <- ifelse( ! is.na(y), y, x )  # Take y value unless transformed.
+    
   } 
   
   ret
@@ -94,3 +100,14 @@ tf_end <- function(x) {
     remove_class('tf_try') %>% 
     setattr( 'orig', NULL )
 }
+
+#' @details 
+#' 
+#' `tf_revert()` abandones the chain of transformations and revert to the 
+#' original value.
+#' 
+#' @export
+
+tf_revert <- function(x) {
+  stop("tf_revert is not implemented yet.")
+} 

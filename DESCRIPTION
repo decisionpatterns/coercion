@@ -18,6 +18,7 @@ Imports:
     methods,
     magrittr (>= 1.5),
     lubridate (>= 1.6.0.9009), 
+    na.tools (>= 0.3.2), 
     data.table
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
